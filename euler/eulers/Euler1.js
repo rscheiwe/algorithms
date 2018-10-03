@@ -14,3 +14,5 @@ function multiples(number) {
   }
   return store.reduce((a,b) => a+b)
 }
+
+module.exports = multiples 
