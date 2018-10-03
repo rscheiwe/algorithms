@@ -1,4 +1,6 @@
 //number 1
+
+//Helper Function for Range()
 function range(start, count) {
   return Array.apply(0, Array(count))
     .map((element, index) => index + start)
@@ -15,4 +17,4 @@ function multiples(number) {
   return store.reduce((a,b) => a+b)
 }
 
-module.exports = multiples 
+module.exports = multiples
