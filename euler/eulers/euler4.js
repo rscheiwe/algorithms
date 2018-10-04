@@ -24,7 +24,7 @@ function palindromeProd() {
   return Math.max(...palindromes)
 }
 
-palindromeProd()
+// palindromeProd()
 
 
-// module.exports = palindromeProd
+module.exports = palindromeProd
