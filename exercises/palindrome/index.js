@@ -14,7 +14,14 @@
 // }
 
 function palindrome(str) {
-  
+  return str.split('').every((char, i) => {
+    return char === str[str.length - i - 1]
+    //str[str.length - i - 1] gives access to array's
+    // mirror element, e.g. "a" and "a" in "abba"
+    //"i" represents index
+  })
 }
+
+palindrome("abba")
 
 module.exports = palindrome;
