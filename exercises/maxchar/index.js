@@ -17,4 +17,14 @@ function maxChar(str) {
   return Object.keys(letters).reduce((a,b) => letters[a] > letters[b] ? a : b)
 }
 
+//a looping solution to find the max value in "letters"
+//let max = 0
+//let maxChar = ''
+//for (let char in letters) {
+//  if (letters[char] > max) {
+      //max = letters[char]
+      //maxChar = char
+// }
+// }
+
 module.exports = maxChar;
