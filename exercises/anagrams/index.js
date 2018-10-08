@@ -8,33 +8,38 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function charMap(str, obj={}) {
-  for (let char of str.replace(/[^\w]/g,"").toLowerCase()) {
-    obj[char] ? obj[char] += 1 : obj[char] = 1
-  }
-  return obj
+function cleanString(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('')
 }
 
 function anagrams(stringA, stringB) {
 
-  let objA = charMap(stringA), objB = charMap(stringB)
-
-  if (Object.keys(objA).length !== Object.keys(objB).length) {
-    return false
-  }
-
-  let aProps = Object.getOwnPropertyNames(objA),
-        bProps = Object.getOwnPropertyNames(objB);
-
-  for (let i = 0; i < aProps.length; i++) {
-    var propName = aProps[i];
-
-    if (objA[propName] !== objB[propName]) {
-        return false;
-    }
-  }
-  return true;
+  return cleanString(stringA) === cleanString(stringB) ? true : false
 
 }
+
+// function charMap(str, obj={}) {
+//   for (let char of str.replace(/[^\w]/g,"").toLowerCase()) {
+//     obj[char] ? obj[char] += 1 : obj[char] = 1
+//   }
+//   return obj
+// }
+//
+// function anagrams(stringA, stringB) {
+//
+//   let objA = charMap(stringA), objB = charMap(stringB)
+//
+//   if (Object.keys(objA).length !== Object.keys(objB).length) {
+//     return false
+//   }
+//
+//   for (let char in objA) {
+//     if (objA[char] !== objB[char]) {
+//       return false
+//     }
+//   }
+//   return true
+//
+// }
 
 module.exports = anagrams;
