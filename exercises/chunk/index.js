@@ -12,6 +12,20 @@
 
 function chunk(array, size) {
 
+  let chunked = []
+  array.forEach(item => {
+
+    let lastEl = chunked[chunked.length-1]
+    !lastEl || lastEl.length === size ? chunked.push([item]) : lastEl.push(item)
+
+  })
+  return chunked
 }
 
 module.exports = chunk;
+
+// if (!lastEl || lastEl.length === size) {
+//   chunked.push([item])
+// } else {
+//   lastEl.push(item)
+// }
