@@ -9,23 +9,38 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 
-
 function chunk(array, size) {
-
   let chunked = []
-  array.forEach(item => {
-
-    let lastEl = chunked[chunked.length-1]
-    !lastEl || lastEl.length === size ? chunked.push([item]) : lastEl.push(item)
-
-  })
+  let index = 0
+  while (index < array.length) {
+    chunked.push(array.slice(index, index+size))
+    index += size
+  }
   return chunked
 }
 
-module.exports = chunk;
-
-// if (!lastEl || lastEl.length === size) {
-//   chunked.push([item])
-// } else {
-//   lastEl.push(item)
+// function chunk(array, size) {
+//
+//   let chunked = []
+//
+//   while (array.length != 0) {
+//     chunked.push(array.splice(0,size))
+//   }
+//
+//   return chunked
+//
 // }
+
+// function chunk(array, size) {
+//
+//   let chunked = []
+//   array.forEach(item => {
+//
+//     let lastEl = chunked[chunked.length-1]
+//     !lastEl || lastEl.length === size ? chunked.push([item]) : lastEl.push(item)
+//
+//   })
+//   return chunked
+// }
+
+module.exports = chunk;
