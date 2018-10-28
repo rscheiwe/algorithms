@@ -9,7 +9,7 @@
 
 function vowels(str) {
   const m =  str.match(/[aeiou]/gi)
-  return m === null ? 0 : m.length
+  return m ? m.length : 0
   // let count = 0
   // let checker = 'aeiou'
   // for (let char of str.toLowerCase()) {
