@@ -45,7 +45,6 @@ function matrix (n) {
       results[i][startCol] = counter
       counter++
     }
-
     startCol++
 
   }
